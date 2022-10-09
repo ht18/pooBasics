@@ -2,15 +2,14 @@
 
 require_once 'Car.php';
 require_once 'Bicycle.php';
+require_once 'Truck.php';
+require_once 'Vehicle.php';
 
-$car1 = new Car('red', 4, "yes");
-var_dump($car1);
+$truck1 = new Truck('orange', 4, 'yes', 400);
+var_dump($truck1);
+$truck1->setStorage(500);
+$newStorage = $truck1->getStorage();
+$newStorageCapacity = $truck1->getStorageCapacity();
+var_dump($truck1);
 
-$car2 = new Car('blue', 5, "no");
-var_dump($car2);
-
-$bike1 = new Bicycle('yellow');
-var_dump($bike1);
-
-$bike2 = new Bicycle('orange');
-var_dump($bike2);
+echo $truck1->isFull($newStorage, $newStorageCapacity);
